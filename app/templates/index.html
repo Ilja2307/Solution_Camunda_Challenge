@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Camunda Tech Challenge for TAM - Animal Picture App - by Ilja Tscharikow</title>
+</head>
+<body>
+    <!-- Display the Camunda logo for branding -->
+    <img src="https://camunda.com/wp-content/uploads/2020/05/logo-camunda-black.svg" alt="Camunda Logo" style="height: 60px;">
+
+    <!-- Main heading with challenge and author reference -->
+    <h2>Camunda Tech Challenge for TAM - Animal Picture App - by Ilja Tscharikow</h2>
+
+    <!-- Short welcome and usage description -->
+    <p>
+        Welcome! Choose an <strong>animal</strong> and click <strong>"Fetch New"</strong> to get a random image.
+        How cute will your next picture be?<br>
+        You can also show the <strong>last saved</strong> image for that type.
+    </p>
+
+    <!-- HTML form that sends a POST request to the same /ui page -->
+    <form method="post">
+        <!-- Dropdown to select the animal type -->
+        <label for="animal_type">Animal:</label>
+        <select name="animal_type" id="animal_type">
+            <option value="cat">Cat</option>
+            <option value="dog">Dog</option>
+            <option value="bear">Bear</option>
+        </select>
+        <br><br>
+
+        <!-- Input to define how many images to fetch -->
+        <label for="amount">How many images?</label>
+        <input type="number" id="amount" name="amount" min="1" max="10" value="1" />
+        <br><br>
+
+        <!-- Button to trigger new image fetching -->
+        <button type="submit" name="action" value="fetch">Fetch New</button>
+
+        <!-- Visual hint and button to show the most recent saved image -->
+        <p style="color: gray;">or show last saved image</p>
+        <button type="submit" name="action" value="last">🕒 Most Recent</button>
+    </form>
+
+    <!-- This block only renders if image URLs are passed from the backend -->
+    {% if image_urls %}
+        <h3>Result:</h3>
+        <p>
+            {% if action == "fetch" %}
+                <!-- Message when images were fetched -->
+                Congratulations! You just fetched {{ image_urls | length }} image(s) of a <strong>{{ animal_type }}</strong>.
+            {% elif action == "last" %}
+                <!-- Message when showing the last saved image -->
+                This is the last saved <strong>{{ animal_type }}</strong> image.
+            {% endif %}
+        </p>
+
+        <!-- Loop over all image URLs and render them on the page -->
+        {% for url in image_urls %}
+            <img src="{{ url }}" alt="Animal Image" style="max-width: 400px; margin: 10px;">
+        {% endfor %}
+    {% endif %}
+</body>
+</html>
