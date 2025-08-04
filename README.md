@@ -8,7 +8,7 @@ While Java was mentioned as a primary language at Camunda, I chose **Python** fo
 
 
 
-Where helpful, I used **generative AI** to support implementation steps — such as validating syntax, researching libraries and API structures or writing proper documentation. However, the **project logic, architectural design and coding decisions** were created and structured manually. I handled all system integration and infrastructure setup hands-on. Out of transparency I have to admit, that otherwise it would not have been possible for me to reach this result in a little over 2 hours.
+Where helpful, I used **generative AI** to support implementation steps — such as validating syntax, researching libraries and API structures or writing proper documentation. However, the **project logic, architectural design and coding decisions** were created and structured manually. I handled all system integration and infrastructure setup hands-on. Out of transparency I have to admit, that otherwise it would not have been possible for me to reach this coding result in a little over 2 hours. README was written mainly after finishing the challenge. 
 
 ---
 
@@ -153,6 +153,9 @@ Solution_Camunda_Challenge/
 ---
 
 ## ❌ Features Not Implemented (but how I would go on from here)
+
+💡 Below is a list of features commonly seen in production systems that I have not implemented. While automated tests are considered a nice bonus for an MVP like this, the other features listed below are critical for real-world deployements and deserve mention. There are of course many more such as proper CORS configuration, security headers or using robbust servers and others which could be added in an even more advanced prototype. 
+
 
 | Feature                              | Status | Implementation Plan                                                                                                                                                                                                                                         |
 | ------------------------------------ | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
