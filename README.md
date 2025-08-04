@@ -16,7 +16,8 @@ Where helpful, I used **generative AI** to support implementation steps — such
 
 To run the app using Docker:
 
-💡 If you are using GitHub Codespaces, DevContainers or VS Code Remote environments (like I did), Docker may already be installed and configured for you — so you can skip installation and go directly to building the image.
+💡 If you are using GitHub Codespaces, DevContainers or VS Code Remote environments (like I did), Docker may already be installed and configured for you — so you can skip installation and go directly to building the image. This image is based on python:3.12-slim and includes all dependencies from requirements.txt.
+
 
 #### 1. Install Docker (if you don't have it yet)
 
@@ -27,20 +28,26 @@ To run the app using Docker:
 ```bash
 docker --version
 ```
+### 2. Clone the repository
 
-#### 2. Build the Docker image
+```bash
+git clone https://github.com/Ilja2307/Solution_Camunda_Challenge.git
+cd Solution_Camunda_Challenge
+```
+
+#### 3. Build the Docker image
 
 ```bash
 docker build -t camunda-animal-service .
 ```
 
-#### 3. Run the Docker container
+#### 4. Run the Docker container
 
 ```bash
 docker run -p 8000:8000 camunda-animal-service
 ```
 
-The app will now be accessible in your browser:
+The app will now be accessible in your browser. Make sure port 8000 is open and accessible in your local/dev environment:
 
 * UI: [http://localhost:8000/ui](http://localhost:8000/ui)
 * API Docs: [http://localhost:8000/docs](http://localhost:8000/docs)
