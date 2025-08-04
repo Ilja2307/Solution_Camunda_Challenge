@@ -28,7 +28,8 @@ To run the app using Docker:
 ```bash
 docker --version
 ```
-### 2. Clone the repository
+
+#### 2. Clone the repository
 
 ```bash
 git clone https://github.com/Ilja2307/Solution_Camunda_Challenge.git
