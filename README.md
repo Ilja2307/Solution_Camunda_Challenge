@@ -14,10 +14,9 @@ Where helpful, I used **generative AI** to support implementation steps — such
 
 ### 🔧 How to Run (Docker)
 
-To run the app using Docker:
+💡 Docker allows you to run the full app in a prebuilt, self-contained container - no need to install Python or set up anything locally. To run the app using Docker:
 
 💡 If you are using GitHub Codespaces, DevContainers or VS Code Remote environments (like I did), Docker may already be installed and configured for you — so you can skip installation and go directly to building the image. This image is based on python:3.12-slim and includes all dependencies from requirements.txt.
-
 
 #### 1. Install Docker (if you don't have it yet)
 
@@ -29,7 +28,9 @@ To run the app using Docker:
 docker --version
 ```
 
-#### 2. Clone the repository
+#### 2. Clone the repository 
+
+💡 If this was a production system, I would have pushed it to Docker Hub - but for this MVP it is not required. Below we will build the image locally from the Dockerfile. 
 
 ```bash
 git clone https://github.com/Ilja2307/Solution_Camunda_Challenge.git
@@ -48,7 +49,7 @@ docker build -t camunda-animal-service .
 docker run -p 8000:8000 camunda-animal-service
 ```
 
-The app will now be accessible in your browser. Make sure port 8000 is open and accessible in your local/dev environment:
+The app will now be accessible in your browser. Make sure port 8000 is open and accessible in your local/dev environment and not blocked by a firewall or already in use:
 
 * UI: [http://localhost:8000/ui](http://localhost:8000/ui)
 * API Docs: [http://localhost:8000/docs](http://localhost:8000/docs)
@@ -92,7 +93,7 @@ pip install -r requirements.txt
 python -c "from app.init_db import init; init()"
 ```
 
-### 6. Start the server
+### 6. Start the FastAPI erver
 
 ```bash
 uvicorn app.main:app --reload
