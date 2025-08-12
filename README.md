@@ -178,6 +178,23 @@ Solution_Camunda_Challenge/
 
 ---
 
+### 🐾 Note on Image APIs
+
+The challenge description mentioned `placekitten`, `place.dog`, and `placebear`.  
+At the time of implementation, the `placekitten` and `place.dog` APIs were not reachable, so they were replaced with **TheCatAPI** (cats) and **random.dog** (dogs).  
+`placebear` remained unchanged.
+
+**Reason:** The chosen replacements are stable, actively maintained, and return direct image URLs suitable for automated fetching and storage. Functionally, they serve the same purpose and align with the challenge’s intent.
+
+---
+
+### Submission adjustments (post-review)
+- Reduced dependencies to a minimal set to avoid long Docker builds.
+- Removed a previously committed SQLite database file; the DB is created at startup. Reasoning: Avoid inflated dependencies (longer build times) and shipping local DB artifacts.
+
+
+---
+
 ## 🧠 Learnings & Reflection
 
 While I understand infrastructure concepts like REST, APIs and Docker in theory, I am not a software developer. I had to revisit many technical details to deliver a working MVP — especially around asynchronous I/O, Docker setup and database integration.
