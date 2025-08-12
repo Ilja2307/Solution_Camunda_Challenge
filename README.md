@@ -14,7 +14,10 @@ Where helpful, I used **generative AI** to support implementation steps — such
 
 ### 🔧 How to Run (Docker)
 
-💡 Docker allows you to run the full app in a prebuilt, self-contained container - no need to install Python or set up anything locally. To run the app using Docker:
+💡 ZIP or Git: You can run this project whether you downloaded it as a ZIP or cloned it from GitHub.
+Once you have the project folder on your machine, open a terminal inside that folder and follow these steps.
+
+💡 Docker allows you to run the full app in a prebuilt, self-contained container - no need to install Python or set up anything locally. 
 
 💡 If you are using GitHub Codespaces, DevContainers or VS Code Remote environments (like I did), Docker may already be installed and configured for you — so you can skip installation and go directly to building the image. This image is based on python:3.12-slim and includes all dependencies from requirements.txt.
 
@@ -28,7 +31,9 @@ Where helpful, I used **generative AI** to support implementation steps — such
 docker --version
 ```
 
-#### 2. Clone the repository 
+#### 2. Get the project folder 
+
+**If cloned from GitHub:**
 
 💡 If this was a production system, I would have pushed it to Docker Hub - but for this MVP it is not required. Below we will build the image locally from the Dockerfile. 
 
@@ -36,6 +41,17 @@ docker --version
 git clone https://github.com/Ilja2307/Solution_Camunda_Challenge.git
 cd Solution_Camunda_Challenge
 ```
+
+**If downloaded as ZIP:**
+
+1: Extract the ZIP file on your machine
+
+2: Open a terminal and navigate into the extracted folder (name may vary depending on your system):
+
+```bash
+cd Solution_Camunda_Challenge-main
+```
+
 
 #### 3. Build the Docker image
 
@@ -61,17 +77,32 @@ https\://<random-id>-8000.preview\.app.github.dev
 
 ## 🧱 Manual Setup (No Docker)
 
+Running from ZIP: If you have a ZIP, unzip it, open a terminal inside the extracted folder, and follow these steps.
 Follow these steps if you want to run the app directly on your machine without Docker:
 
 ### 1. Install Python (if not already installed)
 
 * Python 3.12.1+ is used in this project: [https://www.python.org/downloads/](https://www.python.org/downloads/)
 
-### 2. Clone the repository
+#### 2. Get the project folder 
+
+**If cloned from GitHub:**
+
+💡 If this was a production system, I would have pushed it to Docker Hub - but for this MVP it is not required. Below we will build the image locally from the Dockerfile. 
 
 ```bash
 git clone https://github.com/Ilja2307/Solution_Camunda_Challenge.git
 cd Solution_Camunda_Challenge
+```
+
+**If downloaded as ZIP:**
+
+1: Extract the ZIP file on your machine
+
+2: Open a terminal and navigate into the extracted folder (name may vary depending on your system):
+
+```bash
+cd Solution_Camunda_Challenge-main
 ```
 
 ### 3. (Optional) Create and activate a virtual environment
