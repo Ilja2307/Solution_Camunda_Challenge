@@ -88,8 +88,6 @@ Follow these steps if you want to run the app directly on your machine without D
 
 **If cloned from GitHub:**
 
-💡 If this was a production system, I would have pushed it to Docker Hub - but for this MVP it is not required. Below we will build the image locally from the Dockerfile. 
-
 ```bash
 git clone https://github.com/Ilja2307/Solution_Camunda_Challenge.git
 cd Solution_Camunda_Challenge
