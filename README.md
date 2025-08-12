@@ -14,9 +14,6 @@ Where helpful, I used **generative AI** to support implementation steps — such
 
 ### 🔧 How to Run (Docker)
 
-💡 ZIP or Git: You can run this project whether you downloaded it as a ZIP or cloned it from GitHub.
-Once you have the project folder on your machine, open a terminal inside that folder and follow these steps.
-
 💡 Docker allows you to run the full app in a prebuilt, self-contained container - no need to install Python or set up anything locally. 
 
 💡 If you are using GitHub Codespaces, DevContainers or VS Code Remote environments (like I did), Docker may already be installed and configured for you — so you can skip installation and go directly to building the image. This image is based on python:3.12-slim and includes all dependencies from requirements.txt.
@@ -46,7 +43,7 @@ cd Solution_Camunda_Challenge
 
 1: Extract the ZIP file on your machine
 
-2: Open a terminal and navigate into the extracted folder (name may vary depending on your system):
+2: Open a terminal inside the extracted folder (name may vary):
 
 ```bash
 cd Solution_Camunda_Challenge-main
@@ -77,7 +74,6 @@ https\://<random-id>-8000.preview\.app.github.dev
 
 ## 🧱 Manual Setup (No Docker)
 
-Running from ZIP: If you have a ZIP, unzip it, open a terminal inside the extracted folder, and follow these steps.
 Follow these steps if you want to run the app directly on your machine without Docker:
 
 ### 1. Install Python (if not already installed)
@@ -97,7 +93,7 @@ cd Solution_Camunda_Challenge
 
 1: Extract the ZIP file on your machine
 
-2: Open a terminal and navigate into the extracted folder (name may vary depending on your system):
+2: Open a terminal and navigate into the extracted folder after extracting the ZIP (name may vary depending on your system):
 
 ```bash
 cd Solution_Camunda_Challenge-main
@@ -122,10 +118,10 @@ pip install -r requirements.txt
 python -c "from app.init_db import init; init()"
 ```
 
-### 6. Start the FastAPI erver
+### 6. Start the FastAPI Server
 
 ```bash
-uvicorn app.main:app --reload
+python -m uvicorn app.main:app --reload
 ```
 
 Once running, you can access:
@@ -185,7 +181,7 @@ Solution_Camunda_Challenge/
 
 ## ❌ Features Not Implemented (but how I would go on from here)
 
-💡 Below is a list of features commonly seen in production systems that I have not implemented. While automated tests are considered a nice bonus for an MVP like this, the other features listed below are critical for real-world deployements and deserve mention. There are of course many more such as proper CORS configuration, security headers or using robbust servers and others which could be added in an even more advanced prototype. 
+💡 Below is a list of features commonly seen in production systems that I have not implemented. While automated tests are considered a nice bonus for an MVP like this, the other features listed below are critical for real-world deployments and deserve mention. There are of course many more such as proper CORS configuration, security headers or using robust servers and others that could be added in an even more advanced prototype. 
 
 
 | Feature                              | Status | Implementation Plan                                                                                                                                                                                                                                         |
